@@ -53,16 +53,6 @@ footer {
   width: 100%;
   opacity: 0.3;
 }
-.videos-youtube {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.video-lettre {
-  width: 300px;
-  margin-top: 120px;
-}
-.vid-lettre {
-  margin-top: 120px;
-  width: 500px;
-}
+
+
+
