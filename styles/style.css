@@ -1,0 +1,68 @@
+body {
+  background-color: whitesmoke;
+}
+.button-style {
+  font-size: 22px;
+  font-weight: bolder;
+  width: 190px;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+.button-1 {
+  background-color: mediumaquamarine;
+}
+.button-2 {
+  background-color: #87bed2;
+}
+.button-3 {
+  background-color: #a6c97f;
+}
+.button-4 {
+  background-color: #e37486;
+}
+.button-style:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  width: 192px;
+}
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 200px;
+}
+body {
+  background-color: rgb(236, 236, 241);
+}
+.background1 {
+  height: 100px;
+}
+footer {
+  position: fixed;
+  left: 30px;
+  bottom: 0;
+  right: 0;
+  object-fit: cover;
+}
+.background1 {
+  height: 60px;
+  width: 100%;
+  opacity: 0.3;
+}
+.videos-youtube {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.video-lettre {
+  width: 300px;
+  margin-top: 120px;
+}
+.vid-lettre {
+  margin-top: 120px;
+  width: 500px;
+}
