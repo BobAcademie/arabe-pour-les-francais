@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr" lang="arabe">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tifawte Académie</title>
+
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="Acceuil.html" class="logo-titre"
+        ><img src="images/logo.png" class="logo" />
+        <h2>Eclairer les ésprits, transmettre le savoir</h2>
+      </a>
+
+      <nav>
+        <a href="notre Académie">Notre académie</a>
+        <a href="qui'est nous">qui est nous</a>
+        <a href="arabe.html">Cours arabe</a>
+        <a href="vido.html">nos vidèos</a>
+      </nav>
+    </header>
+    <main>
+      <section class="section1">
+        <div class="text">
+          <h1 class="para_titre">الْأَدَواتُ الْمَدْرَسِيَّةُ</h1>
+          <p class="para_intro" dir="rtl">
+            ذَهَبَ عُمَرُ مَعَ أُمِّهِ إِلَى ٱلسُّوقِ لِشِرَاءِ جَدِيدٍ. فَقَالَ
+            لَهُ: <br />
+            - وَعَلَيْكُمُ السَّلامْ. <br />
+            - أَنا اسْمي سامي وأنْتَ ما اسمُكَ؟<br />
+            - اسْمي أدَمُ، مَرْحَبًا بكَ يا سامي. <br />
+            تَحَدَّثَا كَثِيرًا وَأَصْبَحَا صَدِيقَيْن بِسُرْعَةٍ.
+          </p>
+        </div>
+        <img src="images/entrer_scolaire.png" class="text-image" />
+      </section>
+      <section>
+        <h2>أجب عن الأسئلة التالية :</h2>
+        <div class="questions">
+          <div class="question">
+            <p>1. ماذا فعل سامي في أول يوم في المدرسة؟</p>
+            <label
+              ><input type="radio" name="q1" value="0" /> ذهب إلى البيت</label
+            ><br />
+            <label
+              ><input type="radio" name="q1" value="1" /> التقى بزميل
+              جديد</label
+            ><br />
+            <label
+              ><input type="radio" name="q1" value="0" /> لم يتحدث مع أحد</label
+            >
+          </div>
+
+          <div class="question">
+            <p>2. كيف رحب سامي بزميله؟</p>
+            <label
+              ><input type="radio" name="q2" value="1" /> قال: السلام
+              عليكم</label
+            ><br />
+            <label><input type="radio" name="q2" value="0" /> أعطاه كتابا</label
+            ><br />
+            <label
+              ><input type="radio" name="q2" value="0" /> لم يقل شيئاً</label
+            >
+          </div>
+
+          <div class="question">
+            <p>3. ما اسم الزميل الجديد؟</p>
+            <label><input type="radio" name="q3" value="0" /> سامي</label><br />
+            <label><input type="radio" name="q3" value="1" /> آدم</label><br />
+            <label><input type="radio" name="q3" value="0" /> أحمد</label>
+          </div>
+
+          <div class="question">
+            <p>4. ماذا حدث بعد الحديث؟</p>
+            <label
+              ><input type="radio" name="q4" value="1" /> أصبحا صديقين</label
+            ><br />
+            <label><input type="radio" name="q4" value="0" /> تشاجرا</label
+            ><br />
+            <label
+              ><input type="radio" name="q4" value="0" /> غادر آدم الصف</label
+            >
+          </div>
+
+          <button onclick="verifierReponses()">✅  Valider mes réponses</button>
+          <div id="resultat">Résultat/النتيجة</div>
+        </div>
+
+        <script>
+          function verifierReponses() {
+            let score = 0;
+            const total = 4;
+            for (let i = 1; i <= total; i++) {
+              const question = document.querySelector(
+                'input[name="q' + i + '"]:checked'
+              );
+              if (question && question.value === "1") {
+                score++;
+              }
+            }
+
+            const resultat = document.getElementById("resultat");
+            resultat.textContent = `لقد حصلت على ${score} من ${total} نقاط.`;
+            resultat.style.color = score === total ? "green" : "orange";
+          }
+        </script>
+      </section>
+    </main>
+    <footer>tous droits réservé 2025 @TifawtAcademie</footer>
+  </body>
+</html>

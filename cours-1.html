@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="arabe" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tifawte Académie</title>
+
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="Acceuil.html" class="logo-titre"
+        ><img src="images/logo.png" class="logo" />
+        <h2>Eclairer les ésprits, transmettre le savoir</h2>
+      </a>
+
+      <nav>
+        <a href="notre Académie">Notre académie</a>
+        <a href="qui'est nous">qui est nous</a>
+        <a href="arabe.html">Cours arabe</a>
+        <a href="vido.html">nos vidèos</a>
+      </nav>
+    </header>
+    <main>
+      <section class="section1">
+        <div class="text">
+          <h1 class="para_titre">الْعَوْدَةُ إِلى الْمَدْرَسَةِ</h1>
+          <p class="para_intro" dir="rtl">
+            فِي أَوَّلِ يَوْمٍ في ٱلْمَدْرَسَةِ، الْتَقَى سَامِي بِزَمِيلٍ
+            جَدِيدٍ. فَقَالَ لَهُ: <br />- السَّلامُ عَلَيْكُمْ. <br />
+            - وَعَلَيْكُمُ السَّلامْ. <br />
+            - أَنا اسْمي سامي وأنْتَ ما اسمُكَ؟<br />
+            - اسْمي أدَمُ، مَرْحَبًا بكَ يا سامي. <br />
+            أَصْبَحَ الْوَلَدانِ صَدِيقَيْنِ، وَجَلَسا يَلْعَبانِ قَليلاً قَبْلَ
+            وُصُولِ الُمُعَلِّمِ.
+          </p>
+          <audio controls>
+            <source src="audio/retour_ecole.mp3" type="audio/mpeg" />
+            Ton navigateur ne supporte pas l'audio.
+          </audio>
+        </div>
+        <img src="images/entrer_scolaire.png" class="text-image" />
+      </section>
+      <section>
+        <h2>أجب عن الأسئلة التالية :</h2>
+        <div class="questions">
+          <div class="question">
+            <p>1. ماذا فعل سامي في أول يوم في المدرسة؟</p>
+            <label
+              ><input type="radio" name="q1" value="0" /> ذهب إلى البيت</label
+            ><br />
+            <label
+              ><input type="radio" name="q1" value="1" /> التقى بزميل
+              جديد</label
+            ><br />
+            <label
+              ><input type="radio" name="q1" value="0" /> لم يتحدث مع أحد</label
+            >
+          </div>
+
+          <div class="question">
+            <p>2. كيف رحب سامي بزميله؟</p>
+            <label
+              ><input type="radio" name="q2" value="1" /> قال: السلام
+              عليكم</label
+            ><br />
+            <label><input type="radio" name="q2" value="0" /> أعطاه كتابا</label
+            ><br />
+            <label
+              ><input type="radio" name="q2" value="0" /> لم يقل شيئاً</label
+            >
+          </div>
+
+          <div class="question">
+            <p>3. ما اسم الزميل الجديد؟</p>
+            <label><input type="radio" name="q3" value="0" /> سامي</label><br />
+            <label><input type="radio" name="q3" value="1" /> آدم</label><br />
+            <label><input type="radio" name="q3" value="0" /> أحمد</label>
+          </div>
+
+          <div class="question">
+            <p>4. ماذا حدث بعد الحديث؟</p>
+            <label
+              ><input type="radio" name="q4" value="1" /> أصبحا صديقين</label
+            ><br />
+            <label><input type="radio" name="q4" value="0" /> تشاجرا</label
+            ><br />
+            <label
+              ><input type="radio" name="q4" value="0" /> غادر آدم الصف</label
+            >
+          </div>
+
+          <button onclick="verifierReponses()">✅  Valider mes réponses</button>
+          <div id="resultat">Résultat/النتيجة</div>
+        </div>
+
+        <script>
+          function verifierReponses() {
+            let score = 0;
+            const total = 4;
+            for (let i = 1; i <= total; i++) {
+              const question = document.querySelector(
+                'input[name="q' + i + '"]:checked'
+              );
+              if (question && question.value === "1") {
+                score++;
+              }
+            }
+
+            const resultat = document.getElementById("resultat");
+            if (score === total) {
+              resultat.textContent = `ممتاز 👏 ! لقد حصلت على ${score} من ${total} نقاط.`;
+              resultat.style.color = "green";
+            } else if (score >= total / 2) {
+              resultat.textContent = `جيد 🙂 ! لقد حصلت على ${score} من ${total} نقاط.`;
+              resultat.style.color = "orange";
+            } else {
+              resultat.textContent = `حاول مرة أخرى 😅. لقد حصلت على ${score} من ${total} نقاط.`;
+              resultat.style.color = "red";
+            }
+          }
+        </script>
+        <div class="question">
+          <p>1. ما اسم الزميل الجديد ؟</p>
+          <input type="text" id="rep1" placeholder="اكتب الجواب هنا" />
+          <button onclick="corrigerTexte()">تصحيح</button>
+          <p id="feedback1"></p>
+
+          <script>
+            function corrigerTexte() {
+              const reponse = document.getElementById("rep1").value.trim();
+              const feedback = document.getElementById("feedback1");
+
+              if (reponse === "آدم" || reponse === "ادم") {
+                feedback.textContent = "✅ صحيح !";
+                feedback.style.color = "green";
+              } else {
+                feedback.textContent = "❌ خطأ، الجواب هو: آدم";
+                feedback.style.color = "red";
+              }
+            }
+          </script>
+        </div>
+        <div class="question">
+          <p>
+            سامي قال لزميله: <input type="text" id="blank1" size="8" /> عليكم.
+          </p>
+          <button onclick="verifierBlanc()">تصحيح</button>
+          <p id="feedback2"></p>
+
+          <script>
+            function verifierBlanc() {
+              const mot = document.getElementById("blank1").value.trim();
+              const feedback = document.getElementById("feedback2");
+
+              if (mot === "السلام") {
+                feedback.textContent = "✅ أحسنت !";
+                feedback.style.color = "green";
+              } else {
+                feedback.textContent = "❌ الجواب الصحيح هو: السلام";
+                feedback.style.color = "red";
+              }
+            }
+          </script>
+        </div>
+        <div class="question">
+          <p>أعد ترتيب الكلمات لتكوين جملة صحيحة :</p>
+          <p>[ المدرسة - إلى - ذهب - سامي ]</p>
+          <input type="text" id="order" placeholder="اكتب الجملة" />
+          <button onclick="verifierOrdre()">تصحيح</button>
+          <p id="feedback3"></p>
+
+          <script>
+            function verifierOrdre() {
+              const phrase = document.getElementById("order").value.trim();
+              const feedback = document.getElementById("feedback3");
+
+              if (phrase === "ذهب سامي إلى المدرسة") {
+                feedback.textContent = "✅ ممتاز !";
+                feedback.style.color = "green";
+              } else {
+                feedback.textContent =
+                  "❌ حاول مرة أخرى، الجواب: ذهب سامي إلى المدرسة";
+                feedback.style.color = "red";
+              }
+            }
+          </script>
+        </div>
+      </section>
+    </main>
+    <footer>tous droits réservé 2025 @TifawtAcademie</footer>
+  </body>
+</html>
