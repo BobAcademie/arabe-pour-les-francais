@@ -1,6 +1,10 @@
 body {
-  background-color: whitesmoke;
+  background: linear-gradient(to bottom, #807aed, #9f9f9f);
+  min-height: 100vh; /* assure une hauteur d’écran minimum */
+  margin: 0;
+  padding: 0;
 }
+
 .button-style {
   font-size: 22px;
   font-weight: bolder;
@@ -9,9 +13,11 @@ body {
   border: none;
   border-radius: 6px;
   color: white;
-  margin-right: 15px;
-  margin-left: 10px;
+  margin: 10px;
+  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
 }
+
 .button-1 {
   background-color: mediumaquamarine;
 }
@@ -24,35 +30,87 @@ body {
 .button-4 {
   background-color: #e37486;
 }
+
 .button-style:hover {
   opacity: 0.8;
   cursor: pointer;
-  width: 192px;
+  transform: scale(1.03);
 }
+
+.button-style:active {
+  transform: scale(0.97);
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+}
+
 .button-container {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin-top: 200px;
 }
-body {
-  background-color: rgb(236, 236, 241);
+
+/* version mobile */
+@media (max-width: 600px) {
+  .button-container {
+    flex-direction: column; /* empile les boutons verticalement */
+    align-items: center; /* centre les boutons horizontalement */
+    margin-top: 100px; /* ajuster l’espace si nécessaire */
+  }
+
+  .button-style {
+    width: 80%; /* largeur adaptée à l’écran */
+    margin: 10px 0; /* espace vertical entre les boutons */
+    font-size: 26px; /* texte un peu plus grand pour lisibilité */
+  }
 }
-.background1 {
-  height: 100px;
-}
+
 footer {
+  background-image: url(../images/background1.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0); /* pour bien voir le texte */
+
+  height: 100px;
+
   position: fixed;
   left: 30px;
   bottom: 0;
   right: 0;
   object-fit: cover;
 }
-.background1 {
-  height: 60px;
-  width: 100%;
-  opacity: 0.3;
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* couvre tout le footer */
+  background-color: rgba(163, 184, 197, 0.9); /* noir à 50% d’opacité */
+  z-index: 0;
+}
+/* 📱 Ajustement pour mobile */
+@media (max-width: 600px) {
+  footer {
+    position: static; /* le footer redevient normal */
+    height: auto; /* il s’adapte au contenu */
+    left: 0; /* plus de décalage */
+    text-align: center; /* texte centré */
+    background-position: center; /* image recentrée */
+  }
 }
 
+.videos-youtube {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.video-lettre {
+  width: 300px;
+  margin-top: 120px;
+}
+.vid-lettre {
+  margin-top: 120px;
+  width: 500px;
+}
 
 
