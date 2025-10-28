@@ -66,3 +66,66 @@ header {
   top: 0;
   left: 0;
 }
+
+/* 🔘 Bouton hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 20px;
+}
+
+/* 📱 Responsive : apparence sur mobile */
+@media (max-width: 700px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+
+  .logo-titre {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo {
+    width: 70px;
+    height: 70px;
+    margin: 0;
+  }
+
+  .logo-titre h2 {
+    font-size: 0.9rem;
+  }
+
+  /* Masquer le menu par défaut */
+  .rigth-section {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: lavender;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Afficher le menu quand il est actif */
+  .rigth-section.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .rigth-section div a {
+    font-size: 1rem;
+    padding: 10px;
+  }
+}
