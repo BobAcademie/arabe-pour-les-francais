@@ -1,41 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    
     <meta charset="UTF_8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>BobAcadémie</title>
     <link rel="stylesheet" href="styles/style.css" />
     <link rel="stylesheet" href="styles/header.css" />
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const navMenu = document.getElementById("nav-menu");
+
+      menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+      });
+    </script>
   </head>
   <body>
     <header>
-      <a href="Acceuil.html" class="logo-titre"
-        ><img src="images/logo.png" class="logo" />
-        <h2>Eclairer les ésprits, transmettre le savoir</h2>
+      <a href="Acceuil.html" class="logo-titre">
+        <img src="images/logo.png" class="logo" />
+        <h2>Eclairer les esprits, transmettre le savoir</h2>
       </a>
 
-      <div class="rigth-section">
+      <!-- Bouton hamburger -->
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+
+      <!-- Menu de navigation -->
+      <nav class="rigth-section" id="nav-menu">
         <div><a href="notre Académie">Notre académie</a></div>
         <div><a href="arabe.html">Cours arabe</a></div>
         <div>
-          <a href="https://www.youtube.com/@knowledge-3388">chaine youtube</a>
+          <a href="https://www.youtube.com/@knowledge-3388">Chaîne YouTube</a>
         </div>
-      </div>
+      </nav>
     </header>
+
     <div class="sidebar"></div>
     <div class="button-container">
       <a href="videos.html">
         <button class="button-style button-1">Vidéos des lettres</button>
       </a>
-      <button class="button-style button-2">Compréhension des textes</button>
-      <button class="button-style button-3">Dialogues simples</button>
-      <button class="button-style button-4">Champs lexicals</button>
+      <a href="cours-1.html"
+        ><button class="button-style button-2">Compréhension textes</button></a
+      >
+
+      <a href="#"
+        ><button class="button-style button-3">Dialogues simples</button></a
+      >
+
+      <a href="#"
+        ><button class="button-style button-4">Champs lexicals</button></a
+      >
     </div>
-    <footer class="foot">
-      
-    </footer>
+    <footer class="foot"></footer>
   </body>
 </html>
-
 
 
