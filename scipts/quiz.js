@@ -46,7 +46,7 @@ let currentQuiz = 0;
 let score = 0;
 let selectedAnswer = null;
 // 🔊 Sons pour les réponses
-const correctSound = new Audio("../audios/correct.wav");
+const correctSound = new Audio("../audios/ahsan.mp3");
 const wrongSound = new Audio("../audios/wrong.wav");
 
 loadQuiz();
@@ -166,4 +166,5 @@ reloadBtn.addEventListener("click", () => {
   quiz.classList.remove("hidden");
   loadQuiz();
 });
+
 
