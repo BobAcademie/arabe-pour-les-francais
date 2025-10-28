@@ -50,22 +50,6 @@ body {
   margin-top: 200px;
 }
 
-/* version mobile */
-@media (max-width: 600px) {
-  .button-container {
-    flex-direction: column; /* empile les boutons verticalement */
-    align-items: center; /* centre les boutons horizontalement */
-    
-    margin-top: 100px; /* ajuster l’espace si nécessaire */
-  }
-
-  .button-style {
-    width: 80%; /* largeur adaptée à l’écran */
-    margin: 10px 0; /* espace vertical entre les boutons */
-    font-size: 26px; /* texte un peu plus grand pour lisibilité */
-  }
-}
-
 footer {
   background-image: url(../images/background1.jpg);
   background-position: bottom;
@@ -88,31 +72,6 @@ footer::before {
   background-color: rgba(163, 184, 197, 0.2); /* noir à 50% d’opacité */
   z-index: 0;
 }
-/* 📱 Ajustement pour mobile */
-@media (max-width: 600px) {
-  footer {
-    position: static; /* le footer redevient normal */
-    height: auto; /* il s’adapte au contenu */
-    left: 0; /* plus de décalage */
-    text-align: center; /* texte centré */
-    background-position: center; /* image recentrée */
-  }
-}
-
-.videos-youtube {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.video-lettre {
-  width: 300px;
-  margin-top: 120px;
-}
-.vid-lettre {
-  margin-top: 120px;
-  width: 500px;
-}
-
 
 
 
