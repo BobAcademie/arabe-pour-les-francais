@@ -48,7 +48,7 @@ const quizData = [
     d: "خمسة",
     correct: "b",
   },
-  ,
+  
   {
     question: "   ما هو العدد الذي يظهر في الصورة؟",
     image: "../images/vocabulaire/7.JPG",
@@ -78,6 +78,7 @@ const quizData = [
   },
   
 ];
+
 
 
 
