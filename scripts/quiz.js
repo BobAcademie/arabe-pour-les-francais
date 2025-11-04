@@ -11,9 +11,9 @@ let currentQuiz = 0;
 let score = 0;
 let selectedAnswer = null;
 // 🔊 Sons pour les réponses
-const correctSound = new Audio("../audio/correct.mp3");
-const wrongSound = new Audio("../audio/wrong.mp3");
-const encoragerSound = new Audio("../audio/applaudissment.wav");
+const correctSound = new Audio("../audio/correct.MP3");
+const wrongSound = new Audio("../audio/wrong.MP3");
+const encoragerSound = new Audio("../audio/applaudissment.WAV");
 
 loadQuiz();
 
@@ -143,3 +143,4 @@ reloadBtn.addEventListener("click", () => {
   quiz.classList.remove("hidden");
   loadQuiz();
 });
+
