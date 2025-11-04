@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="arabe" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tifawte Académie</title>
+
+    <link rel="stylesheet" href="../styles/style-cours.css" />
+    <link rel="stylesheet" href="../styles/quiz.css" />
+    <script src="../scripts/quiz-data.js" defer></script>
+    <script src="../scripts/quiz.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="logo-titre"
+        ><img src="../images/logo.png" class="logo" />
+        <h2>Eclairer les ésprits, transmettre le savoir</h2>
+      </a>
+
+      <nav>
+        <a href="notre Académie">Notre académie</a>
+        <a href="qui'est nous">qui est nous</a>
+        <a href="arabe.html">Cours arabe</a>
+        <a href="vido.html">nos vidèos</a>
+      </nav>
+    </header>
+    <main>
+      <h1 class="para_titre">الْعَوْدَةُ إِلى الْمَدْرَسَةِ</h1>
+      <section class="section1">
+        <div class="text">
+          <p class="para_intro" dir="rtl">
+            فِي أَوَّلِ يَوْمٍ في ٱلْمَدْرَسَةِ، الْتَقَى سَامِي بِزَمِيلٍ
+            جَدِيدٍ. فَقَالَ لَهُ: <br />- السَّلامُ عَلَيْكُمْ. <br />
+            - وَعَلَيْكُمُ السَّلامْ. <br />
+            - أَنا اسْمي سامي وأنْتَ ما اسمُكَ؟<br />
+            - اسْمي أدَمُ، مَرْحَبًا بكَ يا سامي. <br />
+            أَصْبَحَ الْوَلَدانِ صَدِيقَيْنِ، وَجَلَسا يَلْعَبانِ قَليلاً قَبْلَ
+            وُصُولِ الُمُعَلِّمِ.
+          </p>
+          <audio controls>
+            <source src="../audio/retour_ecole.MP3" type="audio/mpeg" />
+            Ton navigateur ne supporte pas l'audio.
+          </audio>
+        </div>
+        <div class="text-image">
+          <img src="../images/entrer_scolaire.png" />
+        </div>
+      </section>
+      <section class="quiz-section">
+        <h2>أجب عن الأسئلة التالية :</h2>
+        <div class="quiz-box" id="quiz">
+          <h2 class="question-quiz" id="question">Question ici</h2>
+
+          <div class="answers">
+            <div class="answer" data-answer="a" id="a_text">Réponse A</div>
+            <div class="answer" data-answer="b" id="b_text">Réponse B</div>
+            <div class="answer" data-answer="c" id="c_text">Réponse C</div>
+            <div class="answer" data-answer="d" id="d_text">Réponse D</div>
+          </div>
+
+          <button id="submit">Valider</button>
+        </div>
+
+        <div id="result" class="quiz-box hidden">
+          <h2>Résultat</h2>
+          <p>Score : <span id="score"></span> / <span id="total"></span></p>
+          <button id="reload">Rejouer</button>
+        </div>
+      </section>
+    </main>
+    <footer>tous droits réservé 2025 @TifawtAcademie</footer>
+  </body>
+</html>
