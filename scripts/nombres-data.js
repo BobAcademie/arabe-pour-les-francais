@@ -2,7 +2,7 @@
 const quizData = [
   {
     question: "اختر العدد المناسب للصورة:",
-    image: "./images/vocabulaire/1.jpg",
+    image: "./images/vocabulaire/1.JPG",
     a: "واحد",
     b: "ثلاثة",
     c: "ستة",
@@ -29,4 +29,5 @@ const quizData = [
     correct: "d",
   },
 ];
+
 
