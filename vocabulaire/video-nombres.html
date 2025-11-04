@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fichier contenant les questions -->
+    <script src="../scripts/nombres-data.js" defer></script>
+
+    <!-- Ton moteur de quiz général -->
+    <script src="../scripts/quiz.js" defer></script>
+
+    <title>الأعداد من 1 الى 10 - Tifawt Académie</title>
+
+    <link rel="stylesheet" href="../styles/style-video.css" />
+  </head>
+
+  <body>
+    <header>
+      <a href="index.html" class="logo-titre">
+        <img src="../images/logo.png" class="logo" />
+        <h2>الأعداد من 1 الى 10</h2>
+      </a>
+    </header>
+
+    <main>
+      <!-- 🎥 Section Vidéo -->
+      <section class="video-section">
+        <h1>الأعداد من 1 الى 10</h1>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/6mcs1J0RIO4?si=ViiaFdN9L1WDXIJL"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </section>
+
+      <!-- 🧠 Section Quiz -->
+      <section class="quiz-section">
+        <h2>أجب عن الأسئلة التالية :</h2>
+
+        <div class="quiz-box" id="quiz">
+          <h3 class="question-quiz" id="question">Question ici</h3>
+          <div id="question-image"></div>
+
+          <div class="answers">
+            <div class="answer" data-answer="a" id="a_text">Réponse A</div>
+            <div class="answer" data-answer="b" id="b_text">Réponse B</div>
+            <div class="answer" data-answer="c" id="c_text">Réponse C</div>
+            <div class="answer" data-answer="d" id="d_text">Réponse D</div>
+          </div>
+
+          <button id="submit">Valider</button>
+        </div>
+
+        <div id="result" class="quiz-box hidden">
+          <h2>النتيجة</h2>
+          <p>Score : <span id="score"></span> / <span id="total"></span></p>
+          <button id="reload">إعادة المحاولة</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>© 2025 Tifawt Académie</footer>
+
+    <!-- ⚙️ Script du quiz -->
+    <script src="scripts/quiz-jours.js"></script>
+  </body>
+</html>
