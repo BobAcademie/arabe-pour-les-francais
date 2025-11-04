@@ -12,7 +12,7 @@ let score = 0;
 let selectedAnswer = null;
 // 🔊 Sons pour les réponses
 const correctSound = new Audio("../audio/correct.MP3");
-const wrongSound = new Audio("./audio/wrong.MP3");
+const wrongSound = new Audio("../audio/wrong.MP3");
 const encoragerSound = new Audio("../audio/applaudissment.WAV");
 
 loadQuiz();
@@ -143,6 +143,7 @@ reloadBtn.addEventListener("click", () => {
   quiz.classList.remove("hidden");
   loadQuiz();
 });
+
 
 
 
