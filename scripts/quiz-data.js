@@ -38,7 +38,7 @@ const quizData = [
     b: "التقى بزميل جديد",
     c: "لم يتحدث مع أحد",
     d: "لم يقل شيئاً",
-    correct: "c",
+    correct: "b",
   },
   {
     question: "؟ ماذا قال لزميله الجديد",
@@ -65,5 +65,6 @@ const quizData = [
     correct: "b",
   },
 ];
+
 
 
