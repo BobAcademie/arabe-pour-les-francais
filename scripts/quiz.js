@@ -144,3 +144,4 @@ reloadBtn.addEventListener("click", () => {
   loadQuiz();
 });
 
+
