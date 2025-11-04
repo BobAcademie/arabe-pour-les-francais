@@ -1,0 +1,145 @@
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: #f3f6fa;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: lavender;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+  margin-left: 10px;
+  border-radius: 20px;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: #2d3436;
+}
+
+.video-section {
+  text-align: center;
+  margin: 20px auto;
+}
+
+.lesson-video {
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Styles du quiz (identiques à la page cours) */
+.quiz-box {
+  background-color: #7588ce;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  margin: 30px auto;
+}
+
+.question-quiz {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.answer {
+  font-size: 24px;
+  font-weight: bold;
+  background: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.answer:hover {
+  background: #dcdde1;
+  transform: scale(1.03);
+}
+
+.correct {
+  background-color: #4caf50;
+  color: white;
+}
+.wrong {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.answer.selected {
+  background: #74b9ff;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  background: #0984e3;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #74b9ff;
+}
+
+footer {
+  background-color: #dde1f1;
+  text-align: center;
+  padding: 10px;
+}
+/* 🎯 Style de l'image de la question */
+#question-image {
+  text-align: center;
+  margin: 15px 0;
+}
+
+#question-image img {
+  width: 150px; /* taille moyenne */
+  max-width: 90%; /* pour éviter qu'elle dépasse sur mobile */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid #ddd;
+}
+/* ✨ Animation d'apparition douce pour l'image */
+#question-image img {
+  animation: fadeInZoom 0.6s ease;
+}
+
+@keyframes fadeInZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

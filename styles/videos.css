@@ -1,0 +1,21 @@
+.videos-youtube {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.video-lettre {
+  width: 300px;
+  margin-top: 120px;
+}
+.vid-lettre {
+  margin-top: 120px;
+  width: 500px;
+}
+.video-lettres {
+  width: 300px;
+  margin-top: 20px;
+}
+.vids-lettre {
+  margin-top: 20px;
+  width: 500px;
+}

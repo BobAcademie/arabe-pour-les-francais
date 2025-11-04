@@ -1,0 +1,88 @@
+body {
+  background: linear-gradient(to bottom, #807aed, #9f9f9f);
+  min-height: 100vh; /* assure une hauteur d’écran minimum */
+  margin: 0;
+  padding: 0;
+}
+
+.button-style {
+  font-size: 22px;
+  font-weight: bolder;
+  width: 190px;
+  padding: 15px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  margin: 10px;
+  box-shadow: 6px 6px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.button-1 {
+  background-color: mediumaquamarine;
+}
+.button-2 {
+  background-color: #87bed2;
+}
+.button-3 {
+  background-color: #a6c97f;
+}
+.button-4 {
+  background-color: #e37486;
+}
+
+.button-style:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transform: scale(1.03);
+}
+
+.button-style:active {
+  transform: scale(0.97);
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 200px;
+}
+
+footer {
+  background-image: url(../images/background1.jpg);
+  background-position: bottom;
+  background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(0, 0, 0); /* pour bien voir le texte */
+
+  height: 1%;
+
+  position: fixed;
+  left: 30px;
+  bottom: 0;
+  right: 0;
+  object-fit: cover;
+}
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* couvre tout le footer */
+  background-color: rgba(163, 184, 197, 0.2); /* noir à 50% d’opacité */
+  z-index: 0;
+}
+.videos-youtube {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.video-lettre {
+  width: 300px;
+  margin-top: 120px;
+}
+.vid-lettre {
+  margin-top: 120px;
+  width: 500px;
+}

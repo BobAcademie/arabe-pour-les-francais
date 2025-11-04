@@ -1,0 +1,363 @@
+/* 🎨 Style général */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Naskh Arabic", "Amiri", Arial, sans-serif;
+  background-color: #fbf8f7;
+}
+
+/* 🧭 Header */
+header {
+  background-color: lavender;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 30px;
+}
+
+.logo-titre {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: rgb(47, 11, 227);
+  font-weight: bold;
+}
+
+.logo-titre:hover {
+  opacity: 0.8;
+}
+
+/* 🧭 Navigation */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-right: 20px;
+}
+
+nav a {
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: darkorchid;
+  font-size: larger;
+}
+
+/* 🏫 Contenu principal */
+h1 {
+  color: black;
+  text-align: center;
+  font-size: 3em;
+  margin-top: 30px;
+}
+
+.section1 {
+  background-color: #9dc3ed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 📝 Texte */
+.text {
+  width: 50%;
+  font-weight: bolder;
+  font-size: 2.5em;
+  text-align: right;
+  margin-right: 20px;
+  line-height: 1.6;
+  direction: rtl;
+}
+
+/* 🎧 Audio */
+audio {
+  display: block;
+  margin: 20px auto;
+  width: 80%;
+}
+
+/* 🖼️ Image */
+.text-image {
+  width: 40%;
+  text-align: center;
+}
+
+.text-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* 🦶 Footer */
+footer {
+  background-color: rgba(234, 240, 241, 0.9);
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  color: #333;
+}
+
+/* 📱 Version mobile */
+/* 📱 Version mobile */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-titre {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  /* 🔄 Inversion image / texte sur mobile */
+  .section1 {
+    flex-direction: column-reverse; /* image avant texte */
+    align-items: center;
+    text-align: center;
+  }
+
+  .text,
+  .text-image {
+    width: 90%;
+    margin: 10px 0;
+  }
+
+  .text {
+    font-size: 1.8em;
+    margin: 10px;
+    text-align: center;
+    line-height: 1.8;
+  }
+
+  audio {
+    width: 90%;
+  }
+}
+
+.questions {
+  font-family: Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+  margin: 20px;
+  text-align: right;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.question {
+  margin-bottom: 20px;
+  border: 3px slateblue solid;
+  width: 30%;
+  font-size: 30px;
+  padding-right: 10px;
+}
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+}
+button:hover {
+  background-color: #2980b9;
+}
+
+#resultat {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* ---------------------- */
+/* 🎯 Section du quiz     */
+/* ---------------------- */
+
+.quiz-section {
+  background-color: #d47816; /* bleu très clair pour contraster un peu */
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre le contenu horizontalement */
+  justify-content: center;
+  text-align: center;
+}
+
+.quiz-section h2 {
+  color: #1b2a49;
+  font-size: 2.5em;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+/* Boîte principale du quiz */
+.quiz-box {
+  background-color: #9dc3ed;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  max-width: 90%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quiz-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.question-quiz {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #0b3d91;
+}
+
+/* Réponses */
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 25px 0;
+}
+
+.answer {
+  font-size: 1.3em;
+  background: #ffffff;
+  border: 2px solid #cfe2f3;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s, border-color 0.2s;
+}
+
+.answer:hover {
+  background: #dceaff;
+  transform: scale(1.03);
+  border-color: #74b9ff;
+}
+
+/* ✅ Réponses correctes et fausses */
+.correct {
+  background-color: #4caf50;
+  color: white;
+}
+
+.wrong {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.answer.selected {
+  background: #74b9ff;
+  color: white;
+  font-weight: bold;
+}
+
+/* Résultat final */
+.bravo {
+  background: #c8f7c5;
+  color: #2d572c;
+}
+
+.moyen {
+  background: #f8ced2;
+  color: #dfe20f;
+}
+.faible {
+  background: #ea6772;
+  color: #0d0102;
+}
+
+.bravo,
+.faible {
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+}
+
+/* Boutons */
+button {
+  background: #0b3d91;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #74b9ff;
+  transform: scale(1.05);
+}
+
+/* Masquer */
+.hidden {
+  display: none;
+}
+
+/* ---------------------- */
+/* 📱 Version mobile      */
+/* ---------------------- */
+@media (max-width: 768px) {
+  .quiz-box {
+    width: 90%;
+    margin: 15px auto;
+    padding: 20px;
+  }
+
+  .answer {
+    font-size: 1.1em;
+    padding: 10px;
+  }
+
+  .question-quiz {
+    font-size: 1.5em;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 10px 16px;
+  }
+}

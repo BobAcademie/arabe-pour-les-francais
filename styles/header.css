@@ -1,0 +1,77 @@
+.logo {
+  display: flex;
+  width: 100px;
+  height: 90px;
+  border-radius: 30px;
+  margin-left: 30px;
+}
+.logo-titre {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: rgb(47, 11, 227);
+}
+nav a {
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-right: 25px;
+  color: black;
+}
+
+.logo,
+.logo-titre:hover {
+  opacity: 0.7;
+}
+
+header {
+  height: 100px;
+  position: fixed;
+  background-color: lavender;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.rigth-section {
+  display: flex;
+  justify-content: space-between;
+}
+.rigth-section div a {
+  margin-right: 20px;
+  font-size: large;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  margin-right: 25px;
+  color: black;
+}
+
+.rigth-section div a:hover {
+  color: white;
+  font-size: larger;
+  border: 1px solid blueviolet;
+  background-color: blueviolet;
+  border-radius: 4px;
+  padding: 5px;
+}
+.sidebar {
+  width: 30px;
+  position: fixed;
+  background-color: lavender;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+}
+
+/* 🔘 Bouton hamburger */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  margin-right: 20px;
+}
