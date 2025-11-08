@@ -1,83 +1,42 @@
 // Questions spécifiques à la leçon des jours de la semaine
 const quizData = [
   {
-    question: "   مَا هُوَ الْعَدَدُ الَّذِي يَظْهَرُ فِي الصُّورَة؟",
-    image: "../images/vocabulaire/1.JPG",
-    a: "وَاحِد",
-    b: "ثَلَاثَة",
-    c: "سِتَّة",
-    d: "خَمْسَة",
+    question: "مَا هُوَ الْعَدَدُالظَّاهِر فِي الصُّورَة",
+    image: "../images/vocabulaire/1.jpg",
+    a: "واحد",
+    b: "ثلاثة",
+    c: "ستة",
+    d: "خمسة",
     correct: "a",
+    questionSound: "../audio/nombres/question2.mp3",
+    sounds: {
+      a: "../audio/nombres/1.mp3",
+      b: "../audio/nombres/3.mp3",
+      c: "../audio/nombres/6.mp3",
+      d: "../audio/nombres/5.mp3",
+    },
+  },
+ {
+    question: "مَا هُوَ الْعَدَدُالظَّاهِر فِي الصُّورَة",
+    image: "../images/vocabulaire/1.jpg",
+    a: "واحد",
+    b: "ثلاثة",
+    c: "ستة",
+    d: "خمسة",
+    correct: "b",
+    questionSound: "../audio/nombres/question2.mp3",
+    sounds: {
+      a: "../audio/nombres/1.mp3",
+      b: "../audio/nombres/3.mp3",
+      c: "../audio/nombres/6.mp3",
+      d: "../audio/nombres/5.mp3",
+    },
   },
 
-  {
-    question: "  مَا هُوَ الْعَدَدُ الَّذِي يَظْهَرُ فِي الصُّورَةِ؟ :",
-    image: "../images/vocabulaire/4.JPG",
-    a: "وَاحِد",
-    b: "ثَلَاثَة",
-    c: "أَرْبَعَة",
-    d: "خَمْسَة",
-    correct: "c",
-  },
-  {
-    question: "   ما هو العدد الذي يظهر في الصورة؟",
-    image: "../images/vocabulaire/5.JPG",
-    a: "وَاحِد",
-    b: "ثَلَاثَة",
-    c: "أَرْبَعَة",
-    d: "خَمْسَة",
-    correct: "d",
-  },
   
-  {
-    question: "   ما هو العدد الذي يظهر في الصورة؟",
-    image: "../images/vocabulaire/3.JPG",
-    a: "واحد",
-    b: "ثلاثة",
-    c: "اربعة",
-    d: "خمسة",
-    correct: "b",
-  }
-  ,
-  {
-    question: "   ما هو العدد الذي يظهر في الصورة؟",
-    image: "../images/vocabulaire/2.JPG",
-    a: "واحد",
-    b: "اِثْنَانْ",
-    c: "أَرْبَعَة",
-    d: "خمسة",
-    correct: "b",
-  },
-  
-  {
-    question: "   ما هو العدد الذي يظهر في الصورة؟",
-    image: "../images/vocabulaire/7.JPG",
-    a: "واحد",
-    b: "ثلاثة",
-    c: "سَبْعَة",
-    d: "أَرْبَعَة",
-    correct: "c",
-  },
-   {
-    question: "   ما هو العدد الذي يظهر في الصورة؟",
-    image: "../images/vocabulaire/9.JPG",
-    a: "عَشَرَة",
-    b: "ثَلاثَة",
-    c: "سَبْعَة",
-    d: "تِسْعَة",
-    correct: "d",
-  },
-  {
-    question: "   ما هو العدد الذي يظهر في الصورة؟",
-    image: "../images/vocabulaire/6.JPG",
-    a: "سِتَّة",
-    b: "ثَلاثَة",
-    c: "سَبْعَة",
-    d: "تِسْعَة",
-    correct: "a",
-  },
   
 ];
+
 
 
 
