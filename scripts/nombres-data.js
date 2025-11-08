@@ -2,7 +2,7 @@
 const quizData = [
   {
     question: "مَا هُوَ الْعَدَدُالظَّاهِر فِي الصُّورَة",
-    image: "../images/vocabulaire/1.jpg",
+    image: "../images/vocabulaire/1.JPG",
     a: "واحد",
     b: "ثلاثة",
     c: "ستة",
@@ -18,7 +18,7 @@ const quizData = [
   },
  {
     question: "مَا هُوَ الْعَدَدُالظَّاهِر فِي الصُّورَة",
-    image: "../images/vocabulaire/1.jpg",
+    image: "../images/vocabulaire/3.JPG",
     a: "واحد",
     b: "ثلاثة",
     c: "ستة",
@@ -36,6 +36,7 @@ const quizData = [
   
   
 ];
+
 
 
 
