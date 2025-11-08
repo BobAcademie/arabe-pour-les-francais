@@ -143,3 +143,13 @@ footer {
     transform: scale(1);
   }
 }
+#question {
+  cursor: pointer; /* 🖱️ le curseur devient une main */
+  color: #0066cc; /* bleu pour indiquer que c'est cliquable */
+  transition: 0.3s;
+}
+
+#question:hover {
+  color: #ff6600; /* change de couleur au survol */
+  text-decoration: underline; /* souligne quand on passe la souris */
+}
