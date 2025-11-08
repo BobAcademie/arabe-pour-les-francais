@@ -43,6 +43,32 @@ answersEls.forEach((answer) => {
   });
 });
 
+// 🔊 Jouer le son de la question quand on clique sur le texte
+questionEl.addEventListener("click", () => {
+  const currentQuizData = quizData[currentQuiz];
+  if (currentQuizData.questionSound) {
+    const sound = new Audio(currentQuizData.questionSound);
+    sound.play();
+  }
+});
+
+// 🎧 Quand on clique sur une réponse
+answersEls.forEach((answer) => {
+  answer.addEventListener("click", () => {
+    deselectAnswers();
+    answer.classList.add("selected");
+    selectedAnswer = answer.dataset.answer;
+
+    // 🔊 Jouer le son de la réponse choisie (si défini)
+    const currentQuizData = quizData[currentQuiz];
+    if (currentQuizData.sounds && currentQuizData.sounds[selectedAnswer]) {
+      const soundPath = currentQuizData.sounds[selectedAnswer];
+      const sound = new Audio(soundPath);
+      sound.play();
+    }
+  });
+});
+
 function deselectAnswers() {
   answersEls.forEach((a) => a.classList.remove("selected"));
   selectedAnswer = null;
@@ -143,6 +169,7 @@ reloadBtn.addEventListener("click", () => {
   quiz.classList.remove("hidden");
   loadQuiz();
 });
+
 
 
 
