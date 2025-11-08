@@ -39,7 +39,7 @@ const quizData = [
     b: "اِثْنان",
     c: "سِتَّة",
     d: "سَبْعَة",
-    correct: "d",
+    correct: "a",
     questionSound: "../audio/nombres/question.mp3",
     sounds: {
       a: "../audio/nombres/1.mp3",
@@ -90,10 +90,10 @@ const quizData = [
     correct: "c",
     questionSound: "../audio/nombres/question.mp3",
     sounds: {
-      a: "../audio/nombres/4.mp3",
+      a: "../audio/nombres/9.mp3",
       b: "../audio/nombres/3.mp3",
-      c: "../audio/nombres/6.mp3",
-      d: "../audio/nombres/5.mp3",
+      c: "../audio/nombres/2.mp3",
+      d: "../audio/nombres/6.mp3",
     },
   },
   {
@@ -130,6 +130,7 @@ const quizData = [
   },
   
 ];
+
 
 
 
