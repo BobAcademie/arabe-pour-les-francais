@@ -103,7 +103,7 @@ const quizData = [
     b: "ستة",
     c: "سبعة",
     d: "عشرة",
-    correct: "a",
+    correct: "c",
     questionSound: "",
     sounds: {
       a: "../audio/nombres/5.mp3",
@@ -130,6 +130,7 @@ const quizData = [
     },
   },
 ];
+
 
 
 
