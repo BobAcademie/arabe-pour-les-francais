@@ -77,7 +77,7 @@ const quizData = [
       a: "../audio/jours/samedi.MP3",
       b: "../audio/jours/mercredi.MP3",
       c: "../audio/jours/lundi.MP3",
-      d: "../audio/jours/vendredii.MP3",
+      d: "../audio/jours/vendredi.MP3",
     },
   },
   {
@@ -106,10 +106,10 @@ const quizData = [
     correct: "a",
     questionSound: "",
     sounds: {
-      a: "../audio/nombres/5.MP3",
-      b: "../audio/nombres/6.MP3",
-      c: "../audio/nombres/7.MP3",
-      d: "../audio/nombres/10.MP3",
+      a: "../audio/nombres/5.mp3",
+      b: "../audio/nombres/6.mp3",
+      c: "../audio/nombres/7.mp3",
+      d: "../audio/nombres/10.mp3",
     },
   },
   {
@@ -130,5 +130,6 @@ const quizData = [
     },
   },
 ];
+
 
 
