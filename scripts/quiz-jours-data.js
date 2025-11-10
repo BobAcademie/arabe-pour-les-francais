@@ -5,7 +5,7 @@ const quizData = [
     image: "../images/vocabulaire/jours/jeudi.JPG",
     a: "الْخََمِيس",
     b: "السَّبْت",
-    c: "الأرْبِعاء",
+    c: "الأَرْبِعَاء",
     d: "الأَحَد",
     correct: "a",
     questionSound: "",
@@ -19,10 +19,10 @@ const quizData = [
   {
     question: "مَا هُوَ اليوم الظَّاهِر فِي الصُّورَة",
     image: "../images/vocabulaire/jours/dimanche.JPG",
-    a: "الجمعة",
-    b: "السبت",
-    c: "الإثنين",
-    d: "الأحد",
+    a: "الْجُمُعَة",
+    b: "السَّبْت",
+    c: "الْإِثْنَيْن",
+    d: "الأَحَد",
     correct: "d",
     questionSound: "",
     sounds: {
@@ -35,10 +35,10 @@ const quizData = [
   {
     question: "مَا هُوَ اليوم الظَّاهِر فِي الصُّورَة",
     image: "../images/vocabulaire/jours/mardi.JPG",
-    a: "الجمعة",
+    a: "الْجُمُعَة",
     b: "الثلاثاء",
-    c: "الأربعاء",
-    d: "السبت",
+    c: "الأَرْبِعَاء",
+    d: "السَّبْت",
     correct: "b",
     questionSound: "",
     sounds: {
@@ -51,10 +51,10 @@ const quizData = [
   {
     question: "مَا هُوَ اليوم الظَّاهِر فِي الصُّورَة",
     image: "../images/vocabulaire/jours/vendredi.JPG",
-    a: "السبت",
-    b: "الجمعة",
-    c: "الأربعاء",
-    d: "الأحد",
+    a: "السَّبْت",
+    b: "الْجُمُعَة",
+    c: "الأَرْبِعَاء",
+    d: "الْأَحَد",
     correct: "b",
     questionSound: "",
     sounds: {
@@ -67,10 +67,10 @@ const quizData = [
   {
     question: "مَا هُوَ اليوم الظَّاهِر فِي الصُّورَة",
     image: "../images/vocabulaire/jours/samedi.JPG",
-    a: "السبت",
-    b: "الأربعاء",
-    c: "الإثنين",
-    d: "الجمعة",
+    a: "السَّبْت",
+    b: "الأَرْبِعَاء",
+    c: "الْإِثْنَيْن",
+    d: "الْجُمُعَة",
     correct: "a",
     questionSound: "",
     sounds: {
@@ -83,10 +83,10 @@ const quizData = [
   {
     question: "مَا هُوَ اليوم الظَّاهِر فِي الصُّورَة",
     image: "../images/vocabulaire/jours/lundi.JPG",
-    a: "الجمعة",
-    b: "السبت",
-    c: "الأربعاء",
-    d: "الإثنين",
+    a: "الْجُمُعَة",
+    b: "السَّبْت",
+    c: "الأَرْبِعَاء",
+    d: "الْإِثْنَيْن",
     correct: "d",
     questionSound: "",
     sounds: {
@@ -99,10 +99,10 @@ const quizData = [
   {
     question: "كَمْ عدد أيام الأسبوع؟    ",
     image: "",
-    a: "خمسة",
-    b: "ستة",
-    c: "سبعة",
-    d: "عشرة",
+    a: "خَمْسَة",
+    b: "سِتَّة",
+    c: "سَبْعَة",
+    d: "عَشَرَة",
     correct: "c",
     questionSound: "",
     sounds: {
@@ -116,9 +116,9 @@ const quizData = [
     question:
       "ما هُوَ الْيَوْمُ الَّذي يَأْتي بَعْدَ يَوْمِ الثُّلاثاء؟ - aujourd'hui c'est mardi, demain?",
     image: "",
-    a: "الجمعة",
-    b: "السبت",
-    c: "الأربعاء",
+    a: "الْجُمُعَة",
+    b: "السَّبْت",
+    c: "الأَرْبِعَاء",
     d: "الإثنين",
     correct: "c",
     questionSound: "",
@@ -130,6 +130,7 @@ const quizData = [
     },
   },
 ];
+
 
 
 
