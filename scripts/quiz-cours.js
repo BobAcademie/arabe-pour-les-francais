@@ -15,24 +15,6 @@ let selectedAnswer = null;
 const correctSound = new Audio("../audio/correct.mp3");
 const wrongSound = new Audio("../audio/wrong.mp3");
 const encouragerSound = new Audio("../audio/applaudissment.wav");
-function shuffle(array) {
-  // Algorithme de Fisher–Yates
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-// pour melanger les reponses
-function shuffle(array) {
-  // Algorithme de Fisher–Yates
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
-
 loadQuiz();
 
 function loadQuiz() {
@@ -40,7 +22,7 @@ function loadQuiz() {
   const currentQuizData = quizData[currentQuiz];
   questionEl.textContent = `${currentQuiz + 1}- ${currentQuizData.question}`;
 
-  // 🖼️ Afficher l'image si elle existe
+  // Afficher l'image si présente
   const imageContainer = document.getElementById("question-image");
   if (currentQuizData.image) {
     imageContainer.innerHTML = `<img src="${currentQuizData.image}" alt="illustration" class="quiz-image">`;
@@ -48,11 +30,21 @@ function loadQuiz() {
     imageContainer.innerHTML = "";
   }
 
-  // 🗣️ Remplir les réponses
-  document.getElementById("a_text").textContent = currentQuizData.a;
-  document.getElementById("b_text").textContent = currentQuizData.b;
-  document.getElementById("c_text").textContent = currentQuizData.c;
-  document.getElementById("d_text").textContent = currentQuizData.d;
+  // --- 🎯 Mélanger les réponses ---
+  let answersArray = [
+    { key: "a", text: currentQuizData.a },
+    { key: "b", text: currentQuizData.b },
+    { key: "c", text: currentQuizData.c },
+    { key: "d", text: currentQuizData.d },
+  ];
+
+  answersArray.sort(() => Math.random() - 0.5);
+
+  answersArray.forEach((ans, index) => {
+    const answerEl = answersEls[index];
+    answerEl.textContent = ans.text;
+    answerEl.dataset.answer = ans.key;
+  });
 }
 
 // 🔊 Jouer le son de la question quand on clique sur le texte
