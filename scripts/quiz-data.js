@@ -2,16 +2,16 @@ const quizzes = [
   [
     {
       arabe: "الثلاثاء",
-      mot: "mardid",
-      image: "vocabulaire/mardi.JPG",
-      son: "sons/mardi.mp3",
+      mot: "mardi",
+      image: "../vocabulaire/mardi.JPG",
+      son: "../audio/jours/mardi.MP3",
     },
 
     {
       arabe: "السبت",
       mot: "samedi",
-      image: "vocabulaire/samedi.JPG",
-      son: "sons/samedi.mp3",
+      image: "../vocabulaire/samedi.JPG",
+      son: "../audio/jours/samedi.MP3",
     },
     {
       arabe: "الخميس",
@@ -22,34 +22,30 @@ const quizzes = [
     {
       arabe: "الأربعاء",
       mot: "mercredi",
-      image: "vocabulaire/mercredi.JPG",
-      son: "sons/mercredi.mp3",
+      image: "../vocabulaire/mercredi.JPG",
+      son: "../audio/jours/mercredi.MP3",
     },
-    {
-      arabe: "الأحد",
-      mot: "dimanche",
-      image: "vocabulaire/dimanche.JPG",
-      son: "sons/dimanche.mp3",
-    },
+    
   ],
   [
     {
       arabe: "اثنان",
       mot: "deux",
-      image: "vocabulaire/2.JPG",
-      son: "sons/2.mp3",
+      image: "../vocabulaire/2.JPG",
+      son: "../audio/nombres/2.mp3",
     },
     {
       arabe: "واحد",
       mot: "un",
-      image: "vocabulaire/1.JPG",
-      son: "sons/1.mp3",
+      image: "../vocabulaire/1.JPG",
+      son: "../audio/nombres/1.mp3",
     },
     {
       arabe: "ثلاثة",
       mot: "trois",
-      image: "vocabulaire/3.JPG",
-      son: "sons/3.mp3",
+      image: "../vocabulaire/3.JPG",
+      son: "../audio/jours/3.mp3",
     },
   ],
 ];
+
