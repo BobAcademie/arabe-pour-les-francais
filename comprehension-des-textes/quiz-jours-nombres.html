@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>les jours et les nombres</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        background: #f9fafb;
+      }
+      h2 {
+        color: #333;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+      .words,
+      .targets {
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        flex: 1 1 260px;
+        max-width: 300px;
+      }
+      .word {
+        font-size: 40px;
+        background: #ec9512;
+        color: white;
+        margin: 10px;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: grab;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .word.dragging {
+        opacity: 0.7;
+        transform: scale(1.1);
+        cursor: grabbing;
+      }
+      .target {
+        border: 2px dashed #aaa;
+        border-radius: 8px;
+        margin: 10px;
+        background: #fafafa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 80px;
+        transition: 0.3s;
+      }
+      .target img {
+        width: 180px;
+        height: 80px;
+        object-fit: contain;
+      }
+      .correct {
+        background: #c8f7c5;
+        border-color: #2ecc71;
+      }
+      .wrong {
+        background: #f8d7da;
+        border-color: #e74c3c;
+      }
+      #score {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #2c3e50;
+      }
+      #message {
+        font-size: 22px;
+        font-weight: bold;
+        color: #16a085;
+        opacity: 0;
+        transition: 0.5s;
+        margin-top: 10px;
+      }
+      #message.show {
+        opacity: 1;
+      }
+      button {
+        padding: 12px 25px;
+        font-size: 22px;
+        border: none;
+        background: #3498db;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 20px;
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>🖼️ Fais glisser le mot arabe vers l’image correspondante</h2>
+    <div class="container">
+      <div class="words"></div>
+      <div class="targets"></div>
+    </div>
+
+    <p id="score">Score : 0 / 0</p>
+    <p id="message">🎉 Bravo ! Tu as terminé ce quiz ! 🎉</p>
+    <button id="nextBtn">التالي ➜</button>
+
+    <script src="quiz-data.js"></script>
+    <script src="quiz-multi.js"></script>
+  </body>
+</html>
