@@ -159,7 +159,7 @@ function showResult() {
 
   // ➜ Redirection vers ton quiz drag & drop
   nextBtn.onclick = () => {
-    window.location.href = "../quiz-jours-nombres.html";
+    window.location.href = "quiz-jours-nombres.html";
   };
 
   result.appendChild(nextBtn);
