@@ -20,18 +20,31 @@ loadQuiz();
 function loadQuiz() {
   deselectAnswers();
   const currentQuizData = quizData[currentQuiz];
-  questionEl.textContent = `${currentQuiz + 1}-${currentQuizData.question}`;
-  // 🖼️ Afficher l'image si elle existe
+  questionEl.textContent = `${currentQuiz + 1}- ${currentQuizData.question}`;
+
+  // Afficher l'image si présente
   const imageContainer = document.getElementById("question-image");
   if (currentQuizData.image) {
     imageContainer.innerHTML = `<img src="${currentQuizData.image}" alt="illustration" class="quiz-image">`;
   } else {
     imageContainer.innerHTML = "";
   }
-  document.getElementById("a_text").textContent = currentQuizData.a;
-  document.getElementById("b_text").textContent = currentQuizData.b;
-  document.getElementById("c_text").textContent = currentQuizData.c;
-  document.getElementById("d_text").textContent = currentQuizData.d;
+
+  // --- 🎯 Mélanger les réponses ---
+  let answersArray = [
+    { key: "a", text: currentQuizData.a },
+    { key: "b", text: currentQuizData.b },
+    { key: "c", text: currentQuizData.c },
+    { key: "d", text: currentQuizData.d }
+  ];
+
+  answersArray.sort(() => Math.random() - 0.5);
+
+  answersArray.forEach((ans, index) => {
+    const answerEl = answersEls[index];
+    answerEl.textContent = ans.text;
+    answerEl.dataset.answer = ans.key;
+  });
 }
 
 // Gérer la sélection visuelle
@@ -169,6 +182,7 @@ reloadBtn.addEventListener("click", () => {
   quiz.classList.remove("hidden");
   loadQuiz();
 });
+
 
 
 
