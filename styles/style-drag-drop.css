@@ -2,47 +2,53 @@ body {
     font-family: Arial, sans-serif;
     padding: 20px;
     text-align: center;
+    background: #f9fafb;
 }
 
 #quiz-container {
     display: flex;
-    justify-content: space-between;
-    gap: 15px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
-#words, #targets {
-    width: 40%;
+/* ------------------ WORDS ------------------ */
+#words {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* ------------------ WORDS ------------------ */
 .word {
     padding: 10px;
-    margin: 8px;
     background: #ecf0f1;
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid #ccc;
     font-weight: bold;
     transition: 0.3s;
-
-    /* Nouvelle propriété pour la même hauteur que les targets */
-    min-height: 120px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    min-height: 120px; /* même que les targets */
 }
 
 .word.selected {
     background: #f39c12;
     color: white;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 /* ------------------ TARGETS ------------------ */
+#targets {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
 .target {
-    margin: 8px;
-    padding: 5px; /* réduite pour diminuer la hauteur globale */
+    padding: 5px;
     border: 2px dashed #aaa;
     border-radius: 10px;
     min-height: 120px; /* même que .word */
@@ -53,8 +59,8 @@ body {
 }
 
 .target img {
-    width: 250px; /* plus large */
-    height: 110px; /* même que min-height pour garder la cohérence */
+    width: 250px; /* largeur plus grande */
+    height: 110px; /* correspond à min-height */
     object-fit: cover;
 }
 
@@ -68,30 +74,56 @@ body {
     background: #ffebeb;
 }
 
-#restart {
-    padding: 10px 20px;
-    margin-top: 30px;
+#score {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #2c3e50;
+}
+
+#message {
+    font-size: 22px;
+    font-weight: bold;
+    color: #16a085;
+    opacity: 0;
+    transition: 0.5s;
+    margin-top: 10px;
+}
+
+#message.show {
+    opacity: 1;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 20px;
+    border: none;
     background: #3498db;
     color: white;
-    border: none;
     border-radius: 10px;
-    font-size: 16px;
     cursor: pointer;
+    margin-top: 20px;
+    display: none;
 }
 
 /* ------------------ RESPONSIVE ------------------ */
 @media (max-width: 768px) {
+    #quiz-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
     #words, #targets {
         width: 100%;
+    }
+
+    .word {
+        min-height: 100px;
     }
 
     .target img {
         width: 80%;
         height: auto;
-    }
-
-    .word {
-        min-height: 100px;
     }
 }
 
