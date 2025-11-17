@@ -23,7 +23,7 @@ body {
 
 .word {
     padding: 10px;
-    background: #ecf0f1;
+    background: #f7b236;
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid #ccc;
@@ -33,7 +33,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 120px; /* même que les targets */
+    min-height: 100px; /* même que les targets */
 }
 
 .word.selected {
@@ -54,7 +54,7 @@ body {
     padding: 5px;
     border: 2px dashed #aaa;
     border-radius: 10px;
-    min-height: 120px; /* même que .word */
+    min-height: 100px; /* même que .word */
     display: flex;
     justify-content: center;
     align-items: center;
