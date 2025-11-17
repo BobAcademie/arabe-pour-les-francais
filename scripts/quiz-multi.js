@@ -121,51 +121,97 @@ function initDragDrop() {
     });
   });
 
-  // --- Mobile : touch ---
-  let selected = null;
+  // --- Mobile : touch (remplacer l'ancienne implémentation) ---
+let selected = null;
 
-  words.forEach((word) => {
-    word.addEventListener("touchstart", (e) => {
-      selected = word;
-      word.classList.add("dragging");
-      e.preventDefault();
-    });
+words.forEach((word) => {
+  // Sur mobile, jouer le son au touchstart pour feedback immédiat
+  word.addEventListener("touchstart", (e) => {
+    selected = word;
+    word.classList.add("dragging");
 
-    word.addEventListener("touchmove", (e) => {
-      if (!selected) return;
-      const touch = e.touches[0];
-      selected.style.position = "absolute";
-      selected.style.zIndex = "999";
-      selected.style.left = touch.clientX - 50 + "px";
-      selected.style.top = touch.clientY - 40 + "px";
-    });
-
-    word.addEventListener("touchend", (e) => {
-      if (!selected) return;
-
-      const touch = e.changedTouches[0];
-      let dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
-
-      // 📌 Très important pour iPhone / Android :
-      if (dropTarget && dropTarget.tagName === "IMG") {
-        dropTarget = dropTarget.parentElement;
+    // jouer le son si défini (sur mobile on déclenche ici)
+    if (word.dataset.son) {
+      try {
+        const audio = new Audio(word.dataset.son);
+        audio.currentTime = 0;
+        audio.play();
+      } catch (err) {
+        // ignore
       }
+    }
 
-      // Reset visuel
-      selected.classList.remove("dragging");
-      selected.style.position = "static";
-      selected.style.left = "";
-      selected.style.top = "";
-      selected.style.zIndex = "";
+    // positionner en absolute pour suivre le doigt
+    // on ne fait PAS e.preventDefault() ici pour ne pas bloquer le click sur d'autres navigateurs
+    selected.style.position = "absolute";
+    selected.style.zIndex = "9999";
+    // placer instantanément sous le doigt
+    const touch = e.touches[0];
+    selected.style.left = touch.clientX - selected.offsetWidth / 2 + "px";
+    selected.style.top = touch.clientY - selected.offsetHeight / 2 + "px";
+  }, { passive: true });
 
-      if (dropTarget && dropTarget.classList.contains("target")) {
-        checkMatch(dropTarget, selected.dataset.translation);
+  word.addEventListener("touchmove", (e) => {
+    if (!selected) return;
+    const touch = e.touches[0];
+    selected.style.left = touch.clientX - selected.offsetWidth / 2 + "px";
+    selected.style.top = touch.clientY - selected.offsetHeight / 2 + "px";
+  }, { passive: true });
+
+  word.addEventListener("touchend", (e) => {
+    if (!selected) return;
+
+    const touch = e.changedTouches[0];
+    const x = touch.clientX;
+    const y = touch.clientY;
+
+    // 1) essayer elementsFromPoint (retourne la pile d'éléments sous le point)
+    let elements = document.elementsFromPoint(x, y);
+
+    // 2) rechercher un parent .target dans la pile
+    let dropTarget = null;
+    for (const el of elements) {
+      if (el.classList && el.classList.contains("target")) {
+        dropTarget = el;
+        break;
       }
+      // si c'est une IMG à l'intérieur d'une target, remonter
+      if (el.tagName === "IMG" && el.parentElement && el.parentElement.classList.contains("target")) {
+        dropTarget = el.parentElement;
+        break;
+      }
+    }
 
-      selected = null;
-    });
-  });
+    // 3) si pas trouvé, faire une recherche précise : vérifier tous les targets et comparer bounding rect (tolérance)
+    if (!dropTarget) {
+      const allTargets = document.querySelectorAll(".target");
+      const tol = 10; // tolérance en px autour des targets
+      for (const t of allTargets) {
+        const r = t.getBoundingClientRect();
+        if (x >= r.left - tol && x <= r.right + tol && y >= r.top - tol && y <= r.bottom + tol) {
+          dropTarget = t;
+          break;
+        }
+      }
+    }
+
+    // Réinitialiser la position visuelle du mot
+    selected.classList.remove("dragging");
+    selected.style.position = "static";
+    selected.style.left = "";
+    selected.style.top = "";
+    selected.style.zIndex = "";
+
+    // Si on a trouvé une target valide -> vérification
+    if (dropTarget && dropTarget.classList.contains("target")) {
+      checkMatch(dropTarget, selected.dataset.translation);
+    }
+
+    selected = null;
+  }, { passive: true });
+});
 }
+
 
 // --- Bouton suivant ---
 nextBtn.addEventListener("click", () => {
@@ -180,4 +226,5 @@ nextBtn.addEventListener("click", () => {
 
 // --- Charger le premier quiz ---
 loadQuiz(currentQuizIndex);
+
 
