@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تحميل الدروس - Tifawt Académie</title>
+    <link rel="stylesheet" href="styles/style-video.css" />
+    <style>
+      body {
+        font-family: "Amiri", serif;
+        background-color: #f9f9f9;
+        text-align: center;
+        padding: 30px;
+      }
+
+      h1 {
+        color: #333;
+      }
+      .logo {
+        height: 100px;
+      }
+
+      .pdf-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .pdf-item {
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px 20px;
+        width: 280px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .pdf-item:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      }
+
+      .pdf-icon {
+        width: 40px;
+        height: 40px;
+        margin-left: 15px;
+      }
+
+      .pdf-item a {
+        text-decoration: none;
+        color: #0077cc;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .pdf-item a:hover {
+        color: #e60000;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html" class="logo-titre">
+        <img src="../images/logo.png" class="logo" />
+        <h2>page d'accueil - الصفحة الرئيسية</h2>
+      </a>
+    </header>
+
+    <main>
+      <h1>telecharger les feuilles de travailles 📚 أوراق العمل و الدروس</h1>
+
+      <div class="pdf-list">
+        <div class="pdf-item">
+          <img src="../images/PDF_file_icon.svg" alt="PDF" class="pdf-icon" />
+          <a href="pdf/ن -1.pdf" download>
+            la lettre noon niveau debutant(A1) - حرف النون المستوى الأول
+          </a>
+        </div>
+
+        <div class="pdf-item">
+          <img src="../images/PDF_file_icon.svg" alt="PDF" class="pdf-icon" />
+          <a href="pdf/ن -2.pdf" download>
+            la lettre noon niveau intermediaire(A2-1) - حرف النون المستوى المتوسط
+          </a>
+        </div>
+        <div class="pdf-item">
+          <img src="../images/PDF_file_icon.svg" alt="PDF" class="pdf-icon" />
+          <a href="pdf/ن -3.pdf" download>
+            la lettre noon niveau intermediaire(A2-2) - حرف النون المستوى
+            المتوسط</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <footer>© 2025 Tifawt Académie</footer>
+  </body>
+</html>
