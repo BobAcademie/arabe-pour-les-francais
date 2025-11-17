@@ -5,8 +5,8 @@ const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 const wordsContainer = document.getElementById("words");
 const targetsContainer = document.getElementById("targets");
 const restartBtn = document.getElementById("restart");
-const correctSound = new Audio("../audio/correct2.WAV");
-      const wrongSound = new Audio("../audio/wrong2.WAV");
+const correctSound = new Audio("../audio/correct2.wav");
+      const wrongSound = new Audio("../audio/wrong2.wav");
 
 let quizIndex = 0; // pour passer quiz 1 → quiz 2 → etc.
 
@@ -175,6 +175,7 @@ restartBtn.addEventListener("click", loadQuiz);
 
 // Charger premier quiz
 loadQuiz();
+
 
 
 
