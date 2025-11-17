@@ -1,3 +1,4 @@
+
 const wordsContainer = document.querySelector(".words");
 const targetsContainer = document.querySelector(".targets");
 const scoreText = document.getElementById("score");
@@ -10,7 +11,7 @@ let score = 0;
 const correctSound = new Audio("correct.mp3");
 const wrongSound = new Audio("wrong.mp3");
 
-// utilitaire : Fisher–Yates
+// Utilitaire : Fisher–Yates shuffle
 function shuffle(array) {
   const a = array.slice();
   for (let i = a.length - 1; i > 0; i--) {
@@ -20,6 +21,7 @@ function shuffle(array) {
   return a;
 }
 
+// --- Charger un quiz ---
 function loadQuiz(index) {
   wordsContainer.innerHTML = "";
   targetsContainer.innerHTML = "";
@@ -33,7 +35,7 @@ function loadQuiz(index) {
   const shuffledWords = shuffle(quizData);
   const shuffledTargets = shuffle(quizData);
 
-  // Générer les mots
+  // --- Générer les mots ---
   shuffledWords.forEach((item) => {
     const div = document.createElement("div");
     div.className = "word";
@@ -42,6 +44,7 @@ function loadQuiz(index) {
     if (item.son) div.dataset.son = item.son;
     div.textContent = item.arabe;
 
+    // 🎵 son au clic
     div.addEventListener("click", () => {
       if (div.dataset.son) {
         const audio = new Audio(div.dataset.son);
@@ -53,7 +56,7 @@ function loadQuiz(index) {
     wordsContainer.appendChild(div);
   });
 
-  // Générer les cibles
+  // --- Générer les cibles ---
   shuffledTargets.forEach((item) => {
     const target = document.createElement("div");
     target.className = "target";
@@ -68,92 +71,11 @@ function loadQuiz(index) {
   });
 
   initDragDrop();
-  initTouchDrag();
 }
 
-/* -----------------------------------------------------
-   🎯 VERSION MOBILE : Drag & drop tactile
------------------------------------------------------ */
-
-function initTouchDrag() {
-  const words = document.querySelectorAll(".word");
-  let selected = null;
-
-  words.forEach((word) => {
-    word.addEventListener("touchstart", (e) => {
-      selected = word;
-      selected.classList.add("dragging");
-      const touch = e.touches[0];
-      selected.startX = touch.clientX;
-      selected.startY = touch.clientY;
-      selected.style.position = "fixed";
-      selected.style.zIndex = 1000;
-    });
-
-    word.addEventListener("touchmove", (e) => {
-      if (!selected) return;
-
-      const touch = e.touches[0];
-      selected.style.left = touch.clientX - selected.offsetWidth / 2 + "px";
-      selected.style.top = touch.clientY - selected.offsetHeight / 2 + "px";
-    });
-
-    word.addEventListener("touchend", (e) => {
-      if (!selected) return;
-
-      const touch = e.changedTouches[0];
-      const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
-
-      selected.classList.remove("dragging");
-      selected.style.position = "static";
-      selected.style.zIndex = "";
-      selected.style.left = "";
-      selected.style.top = "";
-
-      if (dropTarget && dropTarget.classList.contains("target")) {
-        checkMatch(dropTarget, selected.dataset.translation);
-      }
-
-      selected = null;
-    });
-  });
-}
-
-/* -----------------------------------------------------
-   🎯 Version PC (drag & drop classique)
------------------------------------------------------ */
-
-function initDragDrop() {
-  const words = document.querySelectorAll(".word");
-  const targets = document.querySelectorAll(".target");
-
-  words.forEach((word) => {
-    word.addEventListener("dragstart", (e) => {
-      e.dataTransfer.setData("text/plain", word.dataset.translation);
-      word.classList.add("dragging");
-    });
-    word.addEventListener("dragend", () => word.classList.remove("dragging"));
-  });
-
-  targets.forEach((target) => {
-    target.addEventListener("dragover", (e) => e.preventDefault());
-    target.addEventListener("drop", (e) => {
-      e.preventDefault();
-      const dropped = e.dataTransfer.getData("text/plain");
-      checkMatch(target, dropped);
-    });
-  });
-}
-
-/* -----------------------------------------------------
-   🎯 Vérification commune (PC + mobile)
------------------------------------------------------ */
-
-function checkMatch(target, droppedValue) {
-  if (
-    droppedValue === target.dataset.answer &&
-    !target.classList.contains("correct")
-  ) {
+// --- Vérifie si c’est correct ---
+function checkMatch(target, droppedWord) {
+  if (droppedWord === target.dataset.answer && !target.classList.contains("correct")) {
     target.classList.add("correct");
     correctSound.currentTime = 0;
     correctSound.play();
@@ -172,7 +94,80 @@ function checkMatch(target, droppedValue) {
   }
 }
 
-/* 🔵 Bouton suivant */
+// --- Drag & Drop + Mobile Touch ---
+function initDragDrop() {
+  const words = document.querySelectorAll(".word");
+  const targets = document.querySelectorAll(".target");
+
+  // --- PC : drag & drop ---
+  words.forEach((word) => {
+    word.addEventListener("dragstart", (e) => {
+      e.dataTransfer.setData("text/plain", word.dataset.translation);
+      word.classList.add("dragging");
+    });
+
+    word.addEventListener("dragend", () => {
+      word.classList.remove("dragging");
+    });
+  });
+
+  targets.forEach((target) => {
+    target.addEventListener("dragover", (e) => e.preventDefault());
+
+    target.addEventListener("drop", (e) => {
+      e.preventDefault();
+      const dropped = e.dataTransfer.getData("text/plain");
+      checkMatch(target, dropped);
+    });
+  });
+
+  // --- Mobile : touch ---
+  let selected = null;
+
+  words.forEach((word) => {
+    word.addEventListener("touchstart", (e) => {
+      selected = word;
+      word.classList.add("dragging");
+      e.preventDefault();
+    });
+
+    word.addEventListener("touchmove", (e) => {
+      if (!selected) return;
+      const touch = e.touches[0];
+      selected.style.position = "absolute";
+      selected.style.zIndex = "999";
+      selected.style.left = touch.clientX - 50 + "px";
+      selected.style.top = touch.clientY - 40 + "px";
+    });
+
+    word.addEventListener("touchend", (e) => {
+      if (!selected) return;
+
+      const touch = e.changedTouches[0];
+      let dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+
+      // 📌 Très important pour iPhone / Android :
+      if (dropTarget && dropTarget.tagName === "IMG") {
+        dropTarget = dropTarget.parentElement;
+      }
+
+      // Reset visuel
+      selected.classList.remove("dragging");
+      selected.style.position = "static";
+      selected.style.left = "";
+      selected.style.top = "";
+      selected.style.zIndex = "";
+
+      if (dropTarget && dropTarget.classList.contains("target")) {
+        checkMatch(dropTarget, selected.dataset.translation);
+      }
+
+      selected = null;
+    });
+  });
+}
+
+// --- Bouton suivant ---
 nextBtn.addEventListener("click", () => {
   currentQuizIndex++;
   if (currentQuizIndex < quizzes.length) {
@@ -183,6 +178,6 @@ nextBtn.addEventListener("click", () => {
   }
 });
 
-/* 🔵 Charger le premier quiz */
+// --- Charger le premier quiz ---
 loadQuiz(currentQuizIndex);
 
