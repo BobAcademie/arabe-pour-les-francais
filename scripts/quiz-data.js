@@ -17,7 +17,7 @@ const quizzes = [
       arabe: "الخميس",
       mot: "jeudi",
       image: "../images/vocabulaire/jours/jeudi.JPG",
-      son: "../audio/jours/jeudi.mp3",
+      son: "../audio/jours/jeudi.MP3",
     },
     {
       arabe: "الأربعاء",
@@ -48,5 +48,6 @@ const quizzes = [
     },
   ],
 ];
+
 
 
