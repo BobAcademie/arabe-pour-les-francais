@@ -98,6 +98,52 @@
         margin-top: 20px;
         display: none;
       }
+      /* 📱 Responsive pour les petits écrans (téléphones) */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+    line-height: 26px;
+    padding: 0 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .words,
+  .targets {
+    max-width: 100%;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .word {
+    font-size: 28px;
+    height: 55px;
+  }
+
+  .target {
+    height: 70px;
+  }
+
+  .target img {
+    width: 140px;
+    height: 70px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 20px;
+    padding: 12px;
+  }
+}
+
     </style>
   </head>
 
@@ -116,4 +162,5 @@
     <script src="../scripts/quiz-multi.js"></script>
   </body>
 </html>
+
 
