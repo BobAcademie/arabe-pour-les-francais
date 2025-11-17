@@ -39,6 +39,7 @@ function loadQuiz() {
         // Son au clic
         w.addEventListener("click", () => {
             if (item.son) {
+                  audio.currentTime = 0;
                 const audio = new Audio(item.son);
                 audio.play();
             }
@@ -175,6 +176,7 @@ restartBtn.addEventListener("click", loadQuiz);
 
 // Charger premier quiz
 loadQuiz();
+
 
 
 
