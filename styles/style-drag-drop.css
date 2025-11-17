@@ -12,7 +12,7 @@ body {
 }
 
 #words, #targets {
-    width: 48%;
+    width: 40%;
     min-height: 300px;
 }
 
@@ -46,7 +46,7 @@ body {
 }
 
 .target img {
-    width: 110px;
+    width: 210px;
     height: 110px;
     object-fit: cover;
 }
