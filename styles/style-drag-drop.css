@@ -27,7 +27,8 @@ body {
     border-radius: 10px;
     cursor: pointer;
     border: 1px solid #ccc;
-    font-weight: bold;
+    font-weight: bolder;
+    font-size: 2em;
     transition: 0.3s;
     display: flex;
     justify-content: center;
