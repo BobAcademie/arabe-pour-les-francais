@@ -5,6 +5,8 @@ const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 const wordsContainer = document.getElementById("words");
 const targetsContainer = document.getElementById("targets");
 const restartBtn = document.getElementById("restart");
+const correctSound = new Audio("../audio/correct2.WAV");
+      const wrongSound = new Audio("../audio/wrong2.WAV");
 
 let quizIndex = 0; // pour passer quiz 1 → quiz 2 → etc.
 
@@ -85,6 +87,7 @@ function enableDesktopMode() {
 
             if (dragged.dataset.key === t.dataset.key) {
                 t.classList.add("good");
+                correctSound.play(); // ✅ joue le son correct
                 t.innerHTML = dragged.dataset.mot;
                 dragged.style.opacity = "0.3";
                 dragged.draggable = false;
@@ -92,6 +95,7 @@ function enableDesktopMode() {
                 checkQuizComplete();
             } else {
                 t.classList.add("wrong");
+                wrongSound.play(); // ❌ joue le son erreur
                 setTimeout(() => t.classList.remove("wrong"), 600);
             }
         });
@@ -130,6 +134,7 @@ function enableMobileMode() {
 
             if (selectedWord.dataset.key === t.dataset.key) {
                 t.classList.add("good");
+                correctSound.play(); // ✅ joue le son correct
                 t.innerHTML = selectedWord.dataset.mot;
 
                 selectedWord.style.opacity = "0.3";
@@ -139,6 +144,7 @@ function enableMobileMode() {
                 checkQuizComplete();
             } else {
                 t.classList.add("wrong");
+                wrongSound.play(); // ❌ joue le son erreur
                 setTimeout(() => t.classList.remove("wrong"), 500);
             }
         });
@@ -169,6 +175,7 @@ restartBtn.addEventListener("click", loadQuiz);
 
 // Charger premier quiz
 loadQuiz();
+
 
 
 
