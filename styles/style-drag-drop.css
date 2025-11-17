@@ -13,9 +13,9 @@ body {
 
 #words, #targets {
     width: 40%;
-    min-height: 300px;
 }
 
+/* ------------------ WORDS ------------------ */
 .word {
     padding: 10px;
     margin: 8px;
@@ -25,6 +25,12 @@ body {
     border: 1px solid #ccc;
     font-weight: bold;
     transition: 0.3s;
+
+    /* Nouvelle propriété pour la même hauteur que les targets */
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .word.selected {
@@ -33,12 +39,13 @@ body {
     transform: scale(1.1);
 }
 
+/* ------------------ TARGETS ------------------ */
 .target {
     margin: 8px;
-    padding: 10px;
+    padding: 5px; /* réduite pour diminuer la hauteur globale */
     border: 2px dashed #aaa;
     border-radius: 10px;
-    min-height: 120px;
+    min-height: 120px; /* même que .word */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,8 +53,8 @@ body {
 }
 
 .target img {
-    width: 210px;
-    height: 110px;
+    width: 250px; /* plus large */
+    height: 110px; /* même que min-height pour garder la cohérence */
     object-fit: cover;
 }
 
@@ -71,3 +78,20 @@ body {
     font-size: 16px;
     cursor: pointer;
 }
+
+/* ------------------ RESPONSIVE ------------------ */
+@media (max-width: 768px) {
+    #words, #targets {
+        width: 100%;
+    }
+
+    .target img {
+        width: 80%;
+        height: auto;
+    }
+
+    .word {
+        min-height: 100px;
+    }
+}
+
