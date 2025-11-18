@@ -62,7 +62,7 @@ body {
 }
 
 .target img {
-    width: 250px; /* largeur fixe PC */
+    width: 220px; /* largeur fixe PC */
     height: 110px; /* correspond à min-height */
     object-fit: cover;
 }
