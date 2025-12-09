@@ -2,7 +2,7 @@ const quizData = [
   // Correct = c
   {
     question: "مَنْ هَذَا؟",
-    image: "../images/dialogues/pere.PNG",
+    image: "../images/dialogues/pere.png",
     a: "هَذَا أَخِي",
     b: "هَذَا جَدِّي",
     c: "هَذَا أَبِي",
@@ -20,7 +20,7 @@ const quizData = [
   // Correct = a
   {
     question: "مَنْ هَذَا؟",
-    image: "../images/dialogues/frere.PNG",
+    image: "../images/dialogues/frere.png",
     a: "هَذَا أَخِي",
     b: "هَذِهِ أُمِّي",
     c: "هَذَا أَبِي",
@@ -38,7 +38,7 @@ const quizData = [
   // Correct = b
   {
     question: "مَنْ هَذَا؟",
-    image: "../images/dialogues/grand-pere.PNG",
+    image: "../images/dialogues/grand-pere.png",
     a: "هَذَا أَبِي",
     b: "هَذَا جَدِّي",
     c: "هَذَا أَخِي",
@@ -56,7 +56,7 @@ const quizData = [
   // Correct = d
   {
     question: "مَنْ هَذِهِ؟",
-    image: "../images/dialogues/mere.PNG",
+    image: "../images/dialogues/mere.png",
     a: "هَذَا أَخِي",
     b: "هَذَا أَبِي",
     c: "هَذِهِ جَدَّتِي",
@@ -74,7 +74,7 @@ const quizData = [
   // Correct = b
   {
     question: "مَنْ هَذِهِ؟",
-    image: "../images/dialogues/grand-mere.PNG",
+    image: "../images/dialogues/grand-mere.png",
     a: "هَذَا جَدِّي",
     b: "هَذِهِ جَدَّتِي",
     c: "هَذَا أَبِي",
@@ -92,7 +92,7 @@ const quizData = [
   // Correct = c
   {
     question: "مَنْ هَذِهِ؟",
-    image: "../images/dialogues/soeur.PNG",
+    image: "../images/dialogues/soeur.png",
     a: "هَذَا أَخِي",
     b: "هَذِهِ أُمِّي",
     c: "هَذِهِ أُخْتِي",
